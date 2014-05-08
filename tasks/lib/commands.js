@@ -12,7 +12,8 @@ module.exports = {
     },
     pm2_start: function (name) {
         var defaults = {
-            NODE_ENV: name
+            NODE_ENV: name,
+            AES: ''
         };
         var user = conf('ENV');
         var env = {};
@@ -21,7 +22,7 @@ module.exports = {
         _.assign(env, defaults, user);
 
         return util.format('%s || sudo %s pm2 start %s/%s -i 2 --name %s || echo "pm2 already started."',
-            running, (env.AES ? 'AES_ENCRYPTION_PASSWORD=AES_ENCRYPTION_PASSWORD= ' : '' ) + 'NODE_ENV=' + env.NODE_ENV, conf('SRV_CURRENT'), conf('NODE_SCRIPT'), name
+            running, 'AES_ENCRYPTION_PASSWORD=' + env.AES + ' NODE_ENV=' + env.NODE_ENV, conf('SRV_CURRENT'), conf('NODE_SCRIPT'), name
         );
     }
 };

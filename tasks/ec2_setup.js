@@ -54,11 +54,9 @@ module.exports = function (grunt) {
                 excludes: ['*']
             }
         }), [ // node.js
-            'sudo apt-get install software-properties-common',
-            'sudo apt-get install python-software-properties',
-            'sudo add-apt-repository ppa:chris-lea/node.js -y',
+            'sudo add-apt-repository ppa:chris-lea/node.js',
             'sudo apt-get update',
-            'sudo apt-get install nodejs -y'
+            'sudo apt-get install nodejs'
         ], [ // pm2
             'sudo apt-get install make g++ -y',
             'sudo npm install -g pm2@0.7.0',

@@ -54,9 +54,9 @@ module.exports = function (grunt) {
                 excludes: ['*']
             }
         }), [ // node.js
-            'sudo add-apt-repository ppa:chris-lea/node.js',
+            'sudo add-apt-repository ppa:chris-lea/node.js -y',
             'sudo apt-get update',
-            'sudo apt-get install nodejs'
+            'sudo apt-get install nodejs -y'
         ], [ // pm2
             'sudo apt-get install make g++ -y',
             'sudo npm install -g pm2@0.7.0',

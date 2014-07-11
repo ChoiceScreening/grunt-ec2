@@ -95,8 +95,7 @@ module.exports = function (grunt) {
             }
             else {
                 ssh([
-                    'sudo pm2 flush',
-                    'pm2 list'
+                    'sudo pm2 flush'
                 ], { name: name }, done);
             }
         }

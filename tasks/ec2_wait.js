@@ -51,8 +51,8 @@ module.exports = function (grunt) {
 
             var connection = ssh.connect({ name: name, fatal: false }, noop, noop);
 
-            connection.on('error', function () {
-                grunt.log.writeln('%s Connection refused, retrying in 3s...', now());
+            connection.on('error', function (err) {
+                grunt.log.writeln('%s Connection refused, retrying in 3s... --- ' + err, now());
                 wait(waitForSSH);
             });
 

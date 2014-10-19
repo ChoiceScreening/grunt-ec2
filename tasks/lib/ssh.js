@@ -20,6 +20,7 @@ function prepare (options, ready, done) {
 
     sshCredentials(options.name, function (credentials) {
 
+        grunt.log.writeln('SSH Config ' + JSON.stringify(credentials));
         if (!credentials) {
             grunt.fatal('This instance is refusing SSH connections for now');
         }

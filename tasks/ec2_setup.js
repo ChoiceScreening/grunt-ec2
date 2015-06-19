@@ -61,7 +61,7 @@ module.exports = function (grunt) {
         ], [ // pm2
             'sudo apt-get install make g++ -y',
             'sudo npm install -g pm2 --unsafe-perm',
-            'sudo pm2 startup amazon'
+            'sudo pm2 startup'
         ]];
 
         function forwardPort(from, to) {
